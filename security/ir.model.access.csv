@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_pesantren_room_user,pesantren.room_user,model_pesantren_room,base.group_user,1,1,1,1
+access_pendaftaran_santri_user,pendaftaran.santri_user,model_pendaftaran_santri,base.group_user,1,1,1,1
+access_mata_pelajaran_manager,mata.pelajaran.manager,model_mata_pelajaran_pesantren,base.group_user,1,1,1,1
+access_mata_pelajaran_user,mata.pelajaran.user,model_mata_pelajaran_pesantren,base.group_user,1,0,0,0

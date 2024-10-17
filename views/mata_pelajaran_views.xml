@@ -1,0 +1,79 @@
+<odoo>
+    <!-- list View (Tampilan Daftar Mata Pelajaran) -->
+    <record id="view_mata_pelajaran_list" model="ir.ui.view">
+        <field name="name">mata.pelajaran.pesantren.list</field>
+        <field name="model">mata.pelajaran.pesantren</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="nama_mata_pelajaran"/>
+                <field name="kode_mata_pelajaran"/>
+                <field name="kategori_mata_pelajaran"/>
+                <field name="guru_id"/>
+                <field name="jumlah_jam"/>
+                <field name="semester"/>
+                <field name="jadwal_hari"/>
+                <field name="jadwal_waktu"/>
+                <field name="ruangan_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View (Tampilan Detail Mata Pelajaran) -->
+    <record id="view_mata_pelajaran_form" model="ir.ui.view">
+        <field name="name">mata.pelajaran.pesantren.form</field>
+        <field name="model">mata.pelajaran.pesantren</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="nama_mata_pelajaran" required="1"/>
+                            <field name="kode_mata_pelajaran"/>
+                            <field name="kategori_mata_pelajaran" required="1"/>
+                        </group>
+                        <group>
+                            <field name="guru_id"/>
+                            <field name="jumlah_jam"/>
+                            <!-- <field name="tingkat_id"/> -->
+                            <field name="semester"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="jadwal_hari"/>
+                            <field name="jadwal_waktu"/>
+                            <field name="ruangan_id"/>
+                        </group>
+                        <group>
+                            <field name="silabus"/>
+                            <field name="metode_pengajaran"/>
+                            <field name="buku_kitab"/>
+                            <field name="bobot_penilaian"/>
+                            <field name="kkm"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="jumlah_siswa"/>
+                        <field name="catatan_khusus"/>
+                        <field name="status_mata_pelajaran"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action untuk Mengakses Data Mata Pelajaran -->
+    <record id="action_mata_pelajaran" model="ir.actions.act_window">
+        <field name="name">Mata Pelajaran Pesantren</field>
+        <field name="res_model">mata.pelajaran.pesantren</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Buat Mata Pelajaran baru untuk Pesantren.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Item untuk Mengakses Mata Pelajaran -->
+    <menuitem id="menu_mata_pelajaran" name="Mata Pelajaran" parent="menu_pesantren_root" action="action_mata_pelajaran" sequence="2"/>
+</odoo>

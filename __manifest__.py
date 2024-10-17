@@ -13,6 +13,8 @@
         'views/guru_views.xml',
         'views/santri_views.xml',
         'views/room_views.xml',
+        'views/pendaftaran_santri_views.xml',
+        'views/mata_pelajaran_views.xml',
     ],
     'sequence': -2,
     'installable': True,

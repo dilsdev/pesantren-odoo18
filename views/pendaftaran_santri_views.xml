@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="view_pendaftaran_santri_form" model="ir.ui.view">
+        <field name="name">pendaftaran.santri.form</field>
+        <field name="model">pendaftaran.santri</field>
+        <field name="arch" type="xml">
+            <form string="Pendaftaran Santri">
+                <!-- Data Pribadi -->
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="nickname"/>
+                        <field name="gender"/>
+                        <field name="birth_place"/>
+                        <field name="birth_date"/>
+                        <field name="nik"/>
+                    </group>
+                    <group>
+                        <field name="address"/>
+                        <field name="phone"/>
+                        <field name="email"/>
+                        <field name="religion"/>
+                        <field name="blood_type"/>
+                        <field name="nationality"/>
+                    </group>
+                </group>
+                <!-- Notebook untuk Data Lain -->
+                <notebook>
+                    <!-- Data Orang Tua -->
+                    <page string="Data Orang Tua/Wali">
+                        <group>
+                            <field name="father_name"/>
+                            <field name="father_job"/>
+                            <field name="father_education"/>
+                            <field name="father_phone"/>
+                        </group>
+                        <group>
+                            <field name="mother_name"/>
+                            <field name="mother_job"/>
+                            <field name="mother_education"/>
+                            <field name="mother_phone"/>
+                        </group>
+                        <group>
+                            <field name="guardian_name"/>
+                            <field name="guardian_job"/>
+                            <field name="guardian_phone"/>
+                            <field name="parent_address"/>
+                        </group>
+                    </page>
+                    <!-- Data Pendidikan -->
+                    <page string="Data Pendidikan">
+                        <group>
+                            <field name="previous_school"/>
+                            <field name="school_address"/>
+                            <field name="education_level"/>
+                            <field name="nisn"/>
+                            <field name="graduation_year"/>
+                        </group>
+                    </page>
+                    <!-- Data Kesehatan -->
+                    <page string="Data Kesehatan">
+                        <group>
+                            <field name="medical_history"/>
+                            <field name="allergies"/>
+                            <field name="special_needs"/>
+                            <field name="emergency_contact"/>
+                        </group>
+                    </page>
+                    <!-- Data Akademik dan Non-Akademik -->
+                    <page string="Data Akademik  &amp; Non-Akademik">
+                        <group>
+                            <field name="quran_memorization"/>
+                            <field name="academic_achievements"/>
+                            <field name="non_academic_achievements"/>
+                            <field name="extracurricular_interests"/>
+                        </group>
+                    </page>
+                    <!-- Informasi Lainnya -->
+                    <page string="Informasi Lainnya">
+                        <group>
+                            <field name="reason_for_joining"/>
+                            <field name="referral_source"/>
+                            <field name="registration_date"/>
+                        </group>
+                    </page>
+                    <!-- Dokumen Pendukung -->
+                    <page string="Dokumen Pendukung">
+                        <group>
+                            <field name="birth_certificate" filename="Akte Kelahiran"/>
+                            <field name="family_card" filename="Kartu Keluarga"/>
+                            <field name="last_certificate" filename="Ijazah Terakhir"/>
+                            <field name="health_certificate" filename="Surat Keterangan Sehat"/>
+                            <field name="parent_id_card" filename="KTP Orang Tua/Wali"/>
+                            <field name="photo" filename="Foto Berwarna"/>
+                        </group>
+                    </page>
+                    <!-- Data Biaya -->
+                    <page string="Data Biaya">
+                        <group>
+                            <field name="payment_method"/>
+                            <field name="amount_paid"/>
+                            <field name="payment_proof" filename="Bukti Pembayaran"/>
+                        </group>
+                    </page>
+                </notebook>
+                <!-- Status Penerimaan -->
+                <group>
+                    <field name="status"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <!-- List View -->
+    <record id="view_pendaftaran_santri_list" model="ir.ui.view">
+        <field name="name">pendaftaran.santri.list</field>
+        <field name="model">pendaftaran.santri</field>
+        <field name="arch" type="xml">
+            <list string="Pendaftaran Santri">
+                <field name="name"/>
+                <field name="gender"/>
+                <field name="birth_date"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+    <!-- Action -->
+    <record id="action_pendaftaran_santri" model="ir.actions.act_window">
+        <field name="name">Pendaftaran Santri</field>
+        <field name="res_model">pendaftaran.santri</field>
+        <field name="view_mode">list,form</field>
+        <!-- Gunakan 'list' sesuai dengan Odoo 18 -->
+        <field name="view_id" ref="view_pendaftaran_santri_list"/>
+    </record>
+    <menuitem id="menu_pendaftaran_santri" name="Pendaftaran Santri" parent="menu_pesantren_root" action="action_pendaftaran_santri" sequence="1"/>
+</odoo>
