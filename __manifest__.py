@@ -10,7 +10,9 @@
     'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',
-        'views/menu_views.xml',
+        'views/guru_views.xml',
+        'views/santri_views.xml',
+        'views/room_views.xml',
     ],
     'sequence': -2,
     'installable': True,

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <record id="action_pesantren_santri_list" model="ir.actions.act_window">
+        <field name="name">Santri</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <menuitem id="menu_pesantren_root" name="Pesantren" />
+    <menuitem id="menu_pesantren_santri_list" name="Santri" parent="menu_pesantren_root" sequence="1" action="action_pesantren_santri_list"/>
+</odoo>

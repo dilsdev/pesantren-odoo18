@@ -1,0 +1,9 @@
+<odoo>
+    <record id="action_pesantren_guru_list" model="ir.actions.act_window">
+        <field name="name">Guru List</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,form</field> 
+    </record>
+
+    <menuitem id="menu_pesantren_guru_list" name="Guru" parent="menu_pesantren_root" action="action_pesantren_guru_list"/>
+</odoo>
